@@ -1,4 +1,4 @@
-screenshot
+screenshots
 target/
 test-output
 !.mvn/wrapper/maven-wrapper.jar

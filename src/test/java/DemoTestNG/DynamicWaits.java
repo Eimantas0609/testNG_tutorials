@@ -26,12 +26,14 @@ public class DynamicWaits {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(
+                Duration.ofSeconds(5));
         driver.get("https://www.lambdatest.com/selenium-playground/");
 
     }
 
     @AfterMethod
-    public void  tearDown() {
+    public void tearDown() {
         driver.quit();
     }
 
@@ -47,7 +49,7 @@ public class DynamicWaits {
         );
         wait.until(ExpectedConditions.visibilityOfElementLocated(image));
 
-       boolean isDisplayed = driver.findElement(image).isDisplayed();
+        boolean isDisplayed = driver.findElement(image).isDisplayed();
         Assert.assertTrue(isDisplayed,
                 "\n Image Is Not Displayed In The AUT \n");
     }
@@ -72,8 +74,7 @@ public class DynamicWaits {
                 if (progressBarText.equals("Complete!")) {
                     System.out.println("Progress Is Complete!");
                     return progress;
-                }
-                else {
+                } else {
                     System.out.println(progress.getText());
                     return null;
                 }
