@@ -19,7 +19,7 @@ public class ProgressBarTest extends BaseTest {
         softAssert.assertEquals(actualMessage, expectedMessage,
                 "\n The Message Is Not Complete Or Correct \n");
         softAssert.assertEquals(actualPercentage, expectedPercentage,
-                "\n Pecentage Is Not 100% \n");
+                "\n Percentage Is Not 100% \n");
         softAssert.assertAll();
     }
 }
